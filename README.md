@@ -1,27 +1,61 @@
-# TodoList
+# 📝 Angular Todo List
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.17.
+Este é um projeto simples de **Todo List** desenvolvido com [Angular](https://angular.io/) com o intuito de estudos e práticas com a ferramenta. Nele, você pode adicionar, remover, marcar como concluída e listar tarefas.
 
-## Development server
+> 📚 **Objetivo**: Aprender os conceitos básicos de Angular, organização de pastas, criação de componentes, comunicação entre eles e boas práticas no desenvolvimento front-end com TypeScript.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Versãso do NodeJS: **v20.18.0**
+- Versão do Angular CLI: **v17.3.17**
 
-## Code scaffolding
+---
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### 🚀 Como rodar o projeto
 
-## Build
+Certifique-se de ter o [Node.js](https://nodejs.org/) e o [Angular CLI](https://angular.io/cli) instalados.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+#### Instalação
 
-## Running unit tests
+```bash
+# Clonar o repositório
+git clone https://github.com/Dan0Silva/angular-todo-list.git
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+# Entrar na pasta do projeto
+cd angular-todo-list
 
-## Running end-to-end tests
+# Instalar as dependências
+npm install
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+#### Rodando o projeto
 
-## Further help
+```bash
+# Iniciar o servidor de desenvolvimento
+ng serve
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+# Acesse no navegador
+http://localhost:4200/
+
+```
+
+---
+
+### 💬 Convenção de commits
+
+Utilizamos a convenção **Conventional Commits**, que é simples, padronizada e compatível com ferramentas de changelog automático e versionamento semântico. Nesse projeto, optaremos por **não** utilizar a definição de escopo no commit.
+
+Exemplo de commit:
+
+```bash
+<type>: <description>
+```
+
+| Tipo do commit | Descrição                                             |
+| -------------- | ----------------------------------------------------- |
+| feat           | Adicionar uma nova feature                            |
+| fix            | Correção de algo já produzido                         |
+| docs           | Adicionar ou editar itens relacionados a documentação |
+| style          | Adicioanr ou editar itens relacionados a documentação |
+
+---
+
+### 📦 Componentes
