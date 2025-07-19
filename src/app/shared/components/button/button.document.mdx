@@ -1,0 +1,46 @@
+import { Meta, Canvas, Story, Markdown } from "@storybook/addon-docs";
+import * as ButtonComponentStories from "./button.stories";
+
+<Meta of={ButtonComponentStories} />
+
+# Botão
+
+O componente `ButtonComponent` é usado para ações clicáveis no sistema. Ele pode ser utilizado em diversas variações, como botão padrão, contornado, com ícones, etc.
+
+## Exemplos de uso
+
+### Botão Padrão
+
+Este é o botão no estilo padrão, com cor de fundo e texto.
+
+<Canvas of={ButtonComponentStories.Default} />
+
+## Propriedades (Inputs)
+
+<Markdown  style={{ width: '100%' }}>
+{
+`
+
+| Nome        | Tipo        | Valor padrão | Obrigatório | Descrição                                               |
+| ----------- | ----------- | ------------ | ----------- | ------------------------------------------------------- |
+| **text**    | **string**  | —            | Sim         | Texto exibido no botão                                  |
+| **outline** | **boolean** | false        | Não         | Define se o botão deve ser exibido no estilo contornado |
+
+`
+}
+
+</Markdown>
+
+## Quando usar
+
+- Para representar ações primárias em formulários ou modais.
+- Quando houver necessidade de chamar atenção para uma ação importante.
+- Use a versão **contornada** para ações secundárias.
+
+---
+
+## Boas práticas
+
+- Mantenha o texto curto e claro.
+- Use apenas um botão principal por tela.
+- Combine com ícones apenas quando necessário para reforçar o significado da ação.

@@ -1,0 +1,19 @@
+.button {
+  background-color: #ff1a4f;
+  padding: 6px 15px;
+  border-radius: 8px;
+  border: none;
+  color: white;
+  transition: 300ms;
+
+  &:hover {
+    filter: brightness(0.8);
+    cursor: pointer;
+  }
+}
+
+.outline {
+  background-color: transparent;
+  border: solid 2px #ff1a4f;
+  color: #ff1a4f;
+}
