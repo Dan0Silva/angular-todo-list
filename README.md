@@ -56,6 +56,17 @@ Exemplo de commit:
 | docs           | Adicionar ou editar itens relacionados a documentação |
 | style          | Adicioanr ou editar itens relacionados a documentação |
 
----
+### 📚 Documentação dos componentes
 
-### 📦 Componentes
+Este projeto utiliza [**Storybook**](https://storybook.js.org/) para a documentação visual e interativa dos componentes. Para conferir a documentação dos componentes, siga os passos abaixo:
+
+```bash
+# instalando as dependências
+npm install
+
+# rodando o storybook
+npm run storybook
+
+```
+
+Após executar os comandos, a documentação estará disponivel na porta [6006](http://localhost:6006/) da sua maquina.
