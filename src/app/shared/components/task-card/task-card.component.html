@@ -6,5 +6,7 @@
   <p class="description" [ngClass]="task.status ? 'checked' : ''">
     {{ task.description }}
   </p>
-  <span class="material-symbols-outlined">close</span>
+  <button class="close-button" (click)="deleteTask()">
+    <span class="material-symbols-outlined">close</span>
+  </button>
 </li>

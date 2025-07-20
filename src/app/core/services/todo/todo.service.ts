@@ -25,13 +25,13 @@ export class TodoService {
 
   delete(idToRemove: number): void {
     this.taskList = this.taskList.filter((item) => item.id !== idToRemove);
-    this.taskSubject.next(this.taskList);
+    this.taskSubject.next([...this.taskList]);
   }
 
   toggleTask(id: number): void {
     this.taskList = this.taskList.map((task) =>
       task.id === id ? { ...task, concluida: !task.status } : task
     );
-    this.taskSubject.next(this.taskList);
+    this.taskSubject.next([...this.taskList]);
   }
 }
