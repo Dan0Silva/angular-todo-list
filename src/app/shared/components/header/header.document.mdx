@@ -1,0 +1,14 @@
+import { Meta, Canvas, Story, Markdown } from "@storybook/addon-docs";
+import * as HeaderComponentStories from "./header.stories";
+
+<Meta of={HeaderComponentStories} />
+
+# Header
+
+O componente `HeaderComponent` é responsável por renderizar o componente do header da aplicação, contendo em si o titulo da página e um campo de busca.
+
+## Exemplos de uso
+
+Header no estilo padrão.
+
+<Canvas of={HeaderComponentStories.Default} />
