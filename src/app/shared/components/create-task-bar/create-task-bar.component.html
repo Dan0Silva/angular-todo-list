@@ -1,12 +1,12 @@
 <div class="container">
   <input
-    class="search-bar"
+    class="task-input"
     type="search"
     placeholder="Adicionar nova tarefa..."
-    [formControl]="search"
-    (keyup.enter)="searchTerm()"
+    [formControl]="taskDescription"
+    (keyup.enter)="createTask()"
   />
-  <button class="button" (click)="searchTerm()">
+  <button class="button" (click)="createTask()">
     <span class="material-icons">add</span>
   </button>
 </div>

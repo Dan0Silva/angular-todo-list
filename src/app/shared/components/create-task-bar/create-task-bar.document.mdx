@@ -1,0 +1,14 @@
+import { Meta, Canvas, Story, Markdown } from "@storybook/addon-docs";
+import * as CreateTaskBarComponentStories from "./create-task-bar.stories";
+
+<Meta of={CreateTaskBarComponentStories} />
+
+# Create Task Bar
+
+O componente `CreateTaskBarComponent` é responsável por renderizar a barra de criação de uma nova task no componente `HeaderComponent`.
+
+## Exemplos de uso
+
+Barra de criação de uma nova task no estilo padrão.
+
+<Canvas of={CreateTaskBarComponentStories.Default} />

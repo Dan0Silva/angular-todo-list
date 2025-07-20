@@ -3,20 +3,20 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { TodoService } from '../../../core/services/todo/todo.service';
 
 @Component({
-  selector: 'app-search-bar',
-  templateUrl: './search-bar.component.html',
-  styleUrl: './search-bar.component.scss',
+  selector: 'app-create-task-bar',
+  templateUrl: './create-task-bar.component.html',
+  styleUrl: './create-task-bar.component.scss',
 })
-export class SearchBarComponent {
-  search = new FormControl();
+export class CreateTaskBarComponent {
+  taskDescription = new FormControl();
 
   constructor(private todoService: TodoService) {}
 
-  searchTerm() {
-    const description = this.search.value.trim();
+  createTask() {
+    const description = this.taskDescription.value.trim();
     if (description.length > 3) {
       this.todoService.create(description);
-      this.search.setValue('');
+      this.taskDescription.setValue('');
     }
   }
 }
