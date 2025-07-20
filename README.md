@@ -7,6 +7,8 @@ Este é um projeto simples de **Todo List** desenvolvido com [Angular](https://a
 - Versãso do NodeJS: **v20.18.0**
 - Versão do Angular CLI: **v17.3.17**
 
+> Link para o protótipo: **[figma.com](https://www.figma.com/design/4qCAcK31OXOPvPylKhijoy/TODO-LIST?node-id=0-1&t=QwNxfoQo0HOcO2wi-1)**
+
 ---
 
 ### 🚀 Como rodar o projeto
