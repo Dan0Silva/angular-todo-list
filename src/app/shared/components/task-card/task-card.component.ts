@@ -9,13 +9,7 @@ import Task from '../../../core/interfaces/task';
 export class TaskCardComponent {
   @Input() task!: Task;
 
-  ngOnInit() {
-    this.task = {
-      id: 1,
-      description: 'Lavar as vasilhas e limpar a casa',
-      status: false,
-    };
-  }
+  ngOnInit() {}
 
   toggleCheckbox() {
     // const isChecked = (event.target as HTMLInputElement).checked;
