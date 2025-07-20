@@ -1,0 +1,14 @@
+import { Meta, Canvas, Story, Markdown } from "@storybook/addon-docs";
+import * as SearchBarComponentStories from "./search-bar.stories";
+
+<Meta of={SearchBarComponentStories} />
+
+# Search Bar
+
+O componente `SearchBarComponent` é responsável por renderizar a barra de pesquisa no componente `HeaderComponent`.
+
+## Exemplos de uso
+
+Barra de pesquisa no estilo padrão.
+
+<Canvas of={SearchBarComponentStories.Default} />
