@@ -51,12 +51,14 @@ Exemplo de commit:
 <type>: <description>
 ```
 
-| Tipo do commit | Descrição                                             |
-| -------------- | ----------------------------------------------------- |
-| feat           | Adicionar uma nova feature                            |
-| fix            | Correção de algo já produzido                         |
-| docs           | Adicionar ou editar itens relacionados a documentação |
-| style          | Adicioanr ou editar itens relacionados a documentação |
+| Tipo do commit | Descrição                                                       |
+| -------------- | --------------------------------------------------------------- |
+| feat           | Adicionar uma nova feature                                      |
+| fix            | Correção de algo já produzido                                   |
+| docs           | Adicionar ou editar itens relacionados à documentação           |
+| style          | Adicionar ou editar estilos e formatação de código              |
+| refactor       | Refatorar código que não altera comportamento nem corrige erros |
+| accessibility  | Melhorar aspectos de acessibilidade na aplicação                |
 
 ### 📚 Documentação dos componentes
 
