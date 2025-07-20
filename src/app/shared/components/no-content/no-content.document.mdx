@@ -1,0 +1,12 @@
+import { Meta, Canvas, Story, Markdown } from "@storybook/addon-docs";
+import * as NoContentComponentStories from "./no-content.stories";
+
+<Meta of={NoContentComponentStories} />
+
+# Sem Conteudo
+
+O componente `NoContentComponent` é responsável por renderizar uma mensagem na tela, caso o aplicativo não encontre nenhuma tarefa cadastrada.
+
+## Exemplos de uso
+
+<Canvas of={NoContentComponentStories.Default} />
