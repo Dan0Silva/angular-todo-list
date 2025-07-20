@@ -9,8 +9,24 @@
   .title {
     width: 600px;
     font-weight: 800;
-    font-size: 36;
+    font-size: 36px;
     color: var(--color-primary);
     margin-bottom: 32px;
+  }
+}
+
+@media (max-width: 670px) {
+  .container {
+    display: flex;
+    align-items: center;
+    padding: 0 4rem;
+    .title {
+      width: 100%;
+      // max-width: 300px;
+    }
+
+    app-create-task-bar {
+      width: 100%;
+    }
   }
 }

@@ -43,3 +43,17 @@
     }
   }
 }
+
+@media (max-width: 670px) {
+  .container {
+    width: 100%;
+
+    .task-input {
+      width: 100%;
+    }
+
+    .button {
+      display: none;
+    }
+  }
+}
