@@ -1,0 +1,14 @@
+import { Meta, Canvas, Story, Markdown } from "@storybook/addon-docs";
+import * as TaskListComponentStories from "./task-list.stories";
+
+<Meta of={TaskListComponentStories} />
+
+# Lista de tarefas
+
+O componente `TaskListComponent` é responsável por renderizar a lista de tarefas da aplicação, contendo em si diversos cards.
+
+## Exemplos de uso
+
+Lista de tarefas no estilo padrão.
+
+<Canvas of={TaskListComponentStories.Default} />
