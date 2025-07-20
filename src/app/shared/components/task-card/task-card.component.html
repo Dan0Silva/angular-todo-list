@@ -1,7 +1,12 @@
 <li class="container">
   <div class="custom-checkbox">
-    <input type="checkbox" id="status" (change)="toggleCheckbox()" />
-    <label class="checkmark" for="status"></label>
+    <input
+      type="checkbox"
+      [id]="'status-' + task.id"
+      [checked]="task.status"
+      (change)="toggleCheckbox()"
+    />
+    <label class="checkmark" [for]="'status-' + task.id"></label>
   </div>
   <p class="description" [ngClass]="task.status ? 'checked' : ''">
     {{ task.description }}

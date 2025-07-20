@@ -20,18 +20,24 @@ export class TodoService {
       status: false,
     };
     this.taskList = [...this.taskList, newTask];
-    this.taskSubject.next([...this.taskList]);
+    this.emitTaskList();
   }
 
   delete(idToRemove: number): void {
     this.taskList = this.taskList.filter((item) => item.id !== idToRemove);
-    this.taskSubject.next([...this.taskList]);
+    this.emitTaskList();
   }
 
   toggleTask(id: number): void {
-    this.taskList = this.taskList.map((task) =>
-      task.id === id ? { ...task, concluida: !task.status } : task
-    );
+    const task = this.taskList.find((t) => t.id === id);
+    if (task) {
+      task.status = !task.status;
+      this.emitTaskList();
+    }
+    console.log(this.taskList);
+  }
+
+  private emitTaskList(): void {
     this.taskSubject.next([...this.taskList]);
   }
 }

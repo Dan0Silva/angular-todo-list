@@ -15,8 +15,7 @@ export class TaskCardComponent {
   ngOnInit() {}
 
   toggleCheckbox() {
-    // const isChecked = (event.target as HTMLInputElement).checked;
-    this.task.status = !this.task.status;
+    this.todoService.toggleTask(this.task.id);
   }
 
   deleteTask() {
