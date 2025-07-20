@@ -9,12 +9,19 @@ import Task from '../../core/interfaces/task';
 })
 export class HomepageComponent {
   tasks: Task[] = [];
+  isLoading: boolean = true;
 
   constructor(private todoService: TodoService) {}
 
-  ngOnInit() {
-    this.todoService.task$.subscribe((tasksFromService) => {
-      this.tasks = tasksFromService;
+  ngOnInit(): void {
+    this.todoService.task$.subscribe({
+      next: (data) => {
+        this.tasks = data;
+        this.isLoading = false;
+      },
+      error: () => {
+        this.isLoading = false;
+      },
     });
   }
 }

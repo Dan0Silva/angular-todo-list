@@ -1,16 +1,7 @@
 <app-header></app-header>
 
 <main class="container">
-  <ul class="task-list" *ngIf="tasks.length > 0; else noContent">
-    <app-task-card *ngFor="let task of tasks" [task]="task" />
-  </ul>
-  <ng-template #noContent>
-    <div class="no-content">
-      <p>
-        Nenhum item encontrado<br />
-        Experimente cadastrar um novo :)
-      </p>
-      <img src="assets/coffee.svg" alt="coffee" />
-    </div>
-  </ng-template>
+  <app-load-spinner *ngIf="isLoading" />
+  <app-task-list *ngIf="!isLoading && tasks.length > 0" [tasks]="tasks" />
+  <app-no-content *ngIf="!isLoading && tasks.length === 0" />
 </main>
