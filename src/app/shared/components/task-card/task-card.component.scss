@@ -1,6 +1,7 @@
 .container {
   display: flex;
   width: 600px;
+  box-sizing: border-box;
   border-radius: 22px;
   border: solid 2px var(--color-secondary);
   background-color: transparent;
@@ -9,6 +10,8 @@
   padding: 28px;
 
   .custom-checkbox {
+    padding-top: 4px;
+
     input {
       display: none;
     }
@@ -48,5 +51,23 @@
     color: var(--color-primary);
     font-size: 24px;
     font-weight: 700;
+  }
+
+  .close-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    height: 32px;
+    min-width: 32px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: 1000ms;
+
+    &:hover {
+      background-color: var(--color-background);
+      filter: brightness(80%);
+    }
   }
 }
