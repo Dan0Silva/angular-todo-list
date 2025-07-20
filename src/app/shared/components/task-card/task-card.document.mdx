@@ -1,0 +1,48 @@
+import { Meta, Canvas, Markdown } from "@storybook/addon-docs";
+import * as TaskCardComponentStories from "./task-card.stories";
+
+<Meta of={TaskCardComponentStories} />
+
+# Task Card
+
+O componente `TaskCardComponent` é responsável por renderizar um card que contem as informações da task. Através deste card que o usuário fará interação com as funcionalidades da taks.
+
+## Exemplos de uso
+
+Card de task no estilo padrão.
+
+<Canvas of={TaskCardComponentStories.Default} />
+
+## Propriedades
+
+#### Proriedades do **TaskCard**
+
+<Markdown  style={{ width: '100%' }}>
+{
+`
+
+| Nome     | Tipo | Valor padrão | Obrigatório | Descrição                                    |
+| -------- | ---- | ------------ | ----------- | -------------------------------------------- |
+| **task** | Task | —            | Sim         | Objeto que representa a tarefa a ser exibida |
+
+`
+}
+
+</Markdown>
+
+#### Interface **Task**:
+
+<Markdown  style={{ width: '100%' }}>
+{
+`
+
+| Campo         | Tipo    | Obrigatório | Descrição                             |
+| ------------- | ------- | ----------- | ------------------------------------- |
+| **id**        | number  | Sim         | Identificador único da tarefa         |
+| **descricao** | string  | Sim         | Texto descritivo da tarefa            |
+| **status**    | boolean | Não         | Se a tarefa está concluída (**true**) |
+
+`
+}
+
+</Markdown>
