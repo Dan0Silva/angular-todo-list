@@ -1,0 +1,24 @@
+.container {
+  display: flex;
+  align-items: center;
+  height: 8rem;
+
+  .material-symbols-outlined {
+    display: inline-block;
+    background-color: transparent;
+    font-size: 38px;
+    font-weight: 800;
+    color: var(--color-primary);
+    animation: spin 1s linear infinite;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
