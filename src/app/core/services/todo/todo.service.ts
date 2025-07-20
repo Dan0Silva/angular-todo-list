@@ -1,68 +1,71 @@
 import { Injectable } from '@angular/core';
 import Task from '../../interfaces/task';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
 })
 export class TodoService {
-  private readonly STORAGE_KEY = 'todo-list';
-  private taskList: Task[] = [];
-  private taskSubject = new BehaviorSubject<Task[]>(
-    this.loadTasksInLocalStorage()
-  );
-
+  private readonly API_URL = 'http://localhost:3000/tasks';
+  // private taskList: Task[] = [];
+  private taskSubject = new BehaviorSubject<Task[]>([]);
   task$: Observable<Task[]> = this.taskSubject.asObservable();
 
-  constructor() {}
+  constructor(private http: HttpClient) {
+    this.fetchTasks();
+  }
+
+  private fetchTasks(): void {
+    this.http.get<Task[]>(this.API_URL).subscribe((tasks) => {
+      this.taskSubject.next(tasks);
+    });
+  }
 
   getTasks(): Task[] {
     return this.taskSubject.getValue();
   }
 
   create(description: string): void {
-    const newTask: Task = {
-      id: this.taskList.length,
+    const newTask: Omit<Task, 'id'> = {
       description: description,
       status: false,
     };
-    this.taskList = [...this.taskList, newTask];
 
-    this.emitTaskList();
-    this.saveTasksInLocalStorage(this.taskList);
+    this.http.post<Task>(this.API_URL, newTask).subscribe(() => {
+      this.fetchTasks();
+    });
+
+    // this.emitTaskList();
+    // this.saveTasksInLocalStorage(this.taskList);
   }
 
-  delete(idToRemove: number): void {
-    const task = this.taskList.find((t) => t.id === idToRemove);
-    if (task) {
-      this.taskList = this.taskList.filter((item) => item.id !== task.id);
-
-      this.emitTaskList();
-      this.saveTasksInLocalStorage(this.taskList);
-    }
+  delete(id: number): void {
+    this.http.delete(`${this.API_URL}/${id}`).subscribe(() => {
+      this.fetchTasks();
+    });
   }
 
   toggleTask(id: number): void {
-    const task = this.taskList.find((t) => t.id === id);
-    if (task) {
-      task.status = !task.status;
+    const task = this.getTasks().find((t) => t.id === id);
+    if (!task) return;
 
-      this.emitTaskList();
-      this.saveTasksInLocalStorage(this.taskList);
-    }
-    console.log(this.taskList);
+    const updatedTask = { ...task, status: !task.status };
+    this.http.patch(`${this.API_URL}/${id}`, updatedTask).subscribe(() => {
+      this.fetchTasks();
+    });
   }
 
-  private loadTasksInLocalStorage(): Task[] {
-    const data = localStorage.getItem(this.STORAGE_KEY);
-    return data ? JSON.parse(data) : [];
-  }
+  // private loadTasksInLocalStorage(): Task[] {
+  //   const data = localStorage.getItem(this.STORAGE_KEY);
+  //   return data ? JSON.parse(data) : [];
+  // }
 
-  private saveTasksInLocalStorage(tasks: Task[]) {
-    localStorage.setItem(this.STORAGE_KEY, JSON.stringify(tasks));
-  }
+  // private saveTasksInLocalStorage(tasks: Task[]) {
+  //   localStorage.setItem(this.STORAGE_KEY, JSON.stringify(tasks));
+  // }
 
-  private emitTaskList(): void {
-    this.taskSubject.next([...this.taskList]);
-  }
+  // private emitTaskList(): void {
+  //   this.taskSubject.next([...this.taskList]);
+  // }
 }
