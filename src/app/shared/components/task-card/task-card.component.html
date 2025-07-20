@@ -5,13 +5,37 @@
       [id]="'status-' + task.id"
       [checked]="task.status"
       (change)="toggleCheckbox()"
+      [attr.aria-checked]="task.status"
+      [attr.aria-label]="
+        'Marcar tarefa ' +
+        task.description +
+        (task.status ? ' como não concluída' : ' como concluída')
+      "
+      role="checkbox"
     />
-    <label class="checkmark" [for]="'status-' + task.id"></label>
+    <label
+      class="checkmark"
+      [for]="'status-' + task.id"
+      tabindex="0"
+      (keydown.enter)="toggleCheckbox()"
+      (keydown.space)="toggleCheckbox()"
+      [attr.aria-hidden]="true"
+    ></label>
   </div>
-  <p class="description" [ngClass]="task.status ? 'checked' : ''">
+
+  <p
+    class="description"
+    [ngClass]="task.status ? 'checked' : ''"
+    [attr.aria-label]="'Descrição da tarefa: ' + task.description"
+  >
     {{ task.description }}
   </p>
-  <button class="close-button" (click)="deleteTask()">
-    <span class="material-symbols-outlined">close</span>
+
+  <button
+    class="close-button"
+    (click)="deleteTask()"
+    [attr.aria-label]="'Remover tarefa: ' + task.description"
+  >
+    <span class="material-symbols-outlined" aria-hidden="true">close</span>
   </button>
 </li>
