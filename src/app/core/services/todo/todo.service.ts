@@ -33,10 +33,13 @@ export class TodoService {
   }
 
   delete(idToRemove: number): void {
-    this.taskList = this.taskList.filter((item) => item.id !== idToRemove);
+    const task = this.taskList.find((t) => t.id === idToRemove);
+    if (task) {
+      this.taskList = this.taskList.filter((item) => item.id !== task.id);
 
-    this.emitTaskList();
-    this.saveTasksInLocalStorage(this.taskList);
+      this.emitTaskList();
+      this.saveTasksInLocalStorage(this.taskList);
+    }
   }
 
   toggleTask(id: number): void {
