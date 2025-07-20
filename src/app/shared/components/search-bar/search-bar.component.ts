@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import { TodoService } from '../../../core/services/todo/todo.service';
 
 @Component({
   selector: 'app-search-bar',
@@ -9,8 +10,13 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
 export class SearchBarComponent {
   search = new FormControl();
 
-  action() {
-    console.log(this.search.value);
-    this.search.setValue('');
+  constructor(private todoService: TodoService) {}
+
+  searchTerm() {
+    const description = this.search.value.trim();
+    if (description.length > 3) {
+      this.todoService.create(description);
+      this.search.setValue('');
+    }
   }
 }

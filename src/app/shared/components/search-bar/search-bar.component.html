@@ -4,9 +4,9 @@
     type="search"
     placeholder="Adicionar nova tarefa..."
     [formControl]="search"
-    (keyup.enter)="action()"
+    (keyup.enter)="searchTerm()"
   />
-  <button class="button" (click)="action()">
+  <button class="button" (click)="searchTerm()">
     <span class="material-icons">add</span>
   </button>
 </div>

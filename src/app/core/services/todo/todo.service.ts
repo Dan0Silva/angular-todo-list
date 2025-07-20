@@ -20,11 +20,7 @@ export class TodoService {
       status: false,
     };
     this.taskList = [...this.taskList, newTask];
-    this.taskSubject.next(this.taskList);
-  }
-
-  read(): Task[] {
-    return this.taskList;
+    this.taskSubject.next([...this.taskList]);
   }
 
   delete(idToRemove: number): void {

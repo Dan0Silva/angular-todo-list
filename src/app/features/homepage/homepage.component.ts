@@ -13,6 +13,8 @@ export class HomepageComponent {
   constructor(private todoService: TodoService) {}
 
   ngOnInit() {
-    this.tasks = this.todoService.read();
+    this.todoService.task$.subscribe((tasksFromService) => {
+      this.tasks = tasksFromService;
+    });
   }
 }
