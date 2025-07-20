@@ -1,4 +1,28 @@
 .container {
   display: flex;
-  gap: 12px;
+  justify-content: center;
+
+  .task-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .no-content {
+    p {
+      color: var(--color-secondary);
+      font-weight: 400;
+      font-style: italic;
+      font-size: 20px;
+      text-align: center;
+    }
+
+    img {
+      height: 48px;
+      width: 100%;
+      color: var(--color-secondary);
+      margin-top: 20px;
+      color: red;
+    }
+  }
 }
